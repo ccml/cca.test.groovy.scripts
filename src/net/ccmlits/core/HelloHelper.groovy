@@ -28,9 +28,9 @@ class HelloHelper {
 
     def sayHelloSentence(String name) {
         if(!name) {
-            echo "${helloHelperEnv.hiWord}, ${helloHelperEnv.defaultName} ${helloHelperEnv.helloSentenceEnd}"
+            Script.environment.sh "echo" + "${helloHelperEnv.hiWord}, ${helloHelperEnv.defaultName} ${helloHelperEnv.helloSentenceEnd}"
         } else {
-            echo "${helloHelperEnv.hiWord}, ${name} ${helloHelperEnv.helloSentenceEnd}"
+            Script.environment.sh "echo" + "${helloHelperEnv.hiWord}, ${name} ${helloHelperEnv.helloSentenceEnd}"
         }
     }
 
@@ -39,14 +39,14 @@ class HelloHelper {
     }
 
     def sayHello2FromClass(String name) {
-        echo "Hello, ${name}. (2)"
+        Script.environment.sh "echo" + "Hello, ${name}. (2)"
     }
 
     def displaySomeVariables() {
-        echo "${env.PATH}"
-        echo "${BUILD_NUMBER}"
+        Script.environment.sh "echo" + "${env.PATH}"
+        Script.environment.sh "echo" + "${BUILD_NUMBER}"
         DATETIME_TAG = java.time.ZonedDateTime.now().format(java.time.format.DateTimeFormatter.ISO_INSTANT)
-        echo "${DATETIME_TAG}"
+        Script.environment.sh "echo" + "${DATETIME_TAG}"
     }
 
 }
