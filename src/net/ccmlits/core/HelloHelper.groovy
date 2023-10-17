@@ -21,7 +21,7 @@ def init(String hiWord, String helloSentenceEnd){
 }
 
 def changeDefaultName(String name) {
-    HelloHelper.put('defaultName', name)
+    helloHelperEnv.put('defaultName', name)
 }
 
 def sayHelloSentence(String name) {
