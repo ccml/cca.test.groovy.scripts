@@ -24,8 +24,8 @@ def changeDefaultName(String name) {
     helloHelperEnv.put('defaultName', name)
 }
 
-def sayHelloSentence(String name) {
-    if(!name) {
+def sayHelloSentence(String name = '') {
+    if(name == '') {
         echo "${helloHelperEnv.hiWord}, ${helloHelperEnv.defaultName} ${helloHelperEnv.helloSentenceEnd}"
     } else {
         echo "${helloHelperEnv.hiWord}, ${name} ${helloHelperEnv.helloSentenceEnd}"
