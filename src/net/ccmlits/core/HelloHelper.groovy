@@ -37,7 +37,7 @@ def sayHello1FromClass(String name) {
 }
 
 def sayHello2FromClass(String name) {
-    echo "Hello, ${name}. (2) -- V1"
+    echo "Hello, ${name}. (2) -- V2"
 }
 
 def displaySomeVariables() {
