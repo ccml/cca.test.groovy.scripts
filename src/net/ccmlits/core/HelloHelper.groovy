@@ -1,4 +1,4 @@
-package bet.ccmlits.core
+package net.ccmlits.core
 
 /** A map that holds all constants and data members that can be override when constructing  */
 helloHelperEnv
