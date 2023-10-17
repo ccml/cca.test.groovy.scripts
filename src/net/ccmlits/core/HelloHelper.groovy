@@ -12,7 +12,7 @@ helloHelperEnv
 */
 def init(String hiWord, String helloSentenceEnd){
 
-    this.helloHelperEnv = [
+    helloHelperEnv = [
             hiWord : hiWord,
             helloSentenceEnd: helloSentenceEnd,
             defaultName: 'World'
