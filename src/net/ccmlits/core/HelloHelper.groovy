@@ -10,7 +10,7 @@ helloHelperEnv
 * @param helloSentenceEnd - end of the hello sentence
 * @return
 */
-def init(String hiWord, String helloSentenceEnd){
+def construct(String hiWord, String helloSentenceEnd){
 
     helloHelperEnv = [
             hiWord : hiWord,
