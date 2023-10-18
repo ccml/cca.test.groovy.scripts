@@ -1,5 +1,3 @@
-import net.ccmlits.core.HelloHelper
-
 def call() {
     def helloHelper = new net.ccmlits.core.HelloHelper()
     helloHelper.construct('Hello', '.')
@@ -19,8 +17,6 @@ def call() {
             stage('some stage'){
                 steps {
                     script {
-                        sayLocalHello()
-                        
                         helloHelper.sayHello1FromClass('Claude')
                         helloHelper.sayHello2FromClass('Claude')
                         helloHelper.displaySomeVariables()
