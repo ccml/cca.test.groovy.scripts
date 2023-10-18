@@ -1,0 +1,40 @@
+def call() {
+    def helloHelper = new net.ccmlits.core.HelloHelper()
+    helloHelper.construct('Hello', '.')
+
+    def helloHelperClaude = new net.ccmlits.core.HelloHelper()
+    helloHelperClaude.construct('Hi', ' !!!')
+
+    def helloHelperMarc = new net.ccmlits.core.HelloHelper()
+    helloHelperMarc.construct('Ciao', '...')
+
+    pipeline {
+        agent any
+        environment {
+            CI = 'true'
+        }
+        stages {
+            stage('some stage'){
+                steps {
+                    script {
+                        sayLocalHello()
+                        
+                        helloHelper.sayHello1FromClass('Claude')
+                        helloHelper.sayHello2FromClass('Claude')
+                        helloHelper.displaySomeVariables()
+                        
+                        helloHelperClaude.sayHelloSentence()
+                        helloHelperMarc.sayHelloSentence()
+                        helloHelperClaude.changeDefaultName('Claude')
+                        helloHelperMarc.changeDefaultName('Marc')
+                        helloHelperClaude.sayHelloSentence()
+                        helloHelperMarc.sayHelloSentence()
+                        helloHelperClaude.sayHelloSentence('Edualc')
+                        helloHelperMarc.sayHelloSentence('Cram')
+                    }
+                }
+            }
+            
+        }
+    }
+}
