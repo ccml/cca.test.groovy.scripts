@@ -1,3 +1,5 @@
+import net.ccmlits.core.HelloHelper
+
 def call() {
     def helloHelper = new net.ccmlits.core.HelloHelper()
     helloHelper.construct('Hello', '.')
