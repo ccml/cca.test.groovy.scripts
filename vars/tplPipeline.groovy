@@ -13,7 +13,7 @@ def call() {
         environment {
             CI = 'true'
         }
-        parameter {
+        parameters {
             booleanParam(name: 'executeTest', default: true, description: '')
         }
         stages {
