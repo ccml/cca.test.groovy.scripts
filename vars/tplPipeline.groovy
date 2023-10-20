@@ -14,7 +14,7 @@ def call() {
             CI = 'true'
         }
         parameters {
-            booleanParam(name: 'executeTest', default: true, description: '')
+            booleanParam(name: 'executeTest', defaultValue: true, description: '')
         }
         stages {
             stage('some stage'){
