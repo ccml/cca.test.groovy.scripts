@@ -1,4 +1,4 @@
-def call() {
+def call(Map config[:]) {
     def helloHelper = new net.ccmlits.core.HelloHelper()
     helloHelper.construct('Hello', '.')
 
@@ -17,6 +17,9 @@ def call() {
             booleanParam(name: 'executeTest', defaultValue: true, description: '')
         }
         stages {
+            stage ('before') {
+                config.hooks[0]()
+            }
             stage('some stage'){
                 steps {
                     script {
@@ -35,7 +38,9 @@ def call() {
                     }
                 }
             }
-            
+            stage ('after') {
+                config.hooks[1]()
+            }            
         }
     }
 }
