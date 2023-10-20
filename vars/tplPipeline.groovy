@@ -13,6 +13,9 @@ def call() {
         environment {
             CI = 'true'
         }
+        parameter {
+            boolean(name: 'executeTest', default: true, description: '')
+        }
         stages {
             stage('some stage'){
                 steps {
