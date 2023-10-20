@@ -20,7 +20,7 @@ def call(Map config) {
             stage ('before') {
                 steps {
                     script {
-                        config.hooks[0]()
+                        config.beforeHook()
                     }
                 }
             }
@@ -45,7 +45,7 @@ def call(Map config) {
             stage ('after') {
                 steps {
                     script {
-                        config.hooks[1]()
+                        config.afterHook()
                     }
                 }
             }            
