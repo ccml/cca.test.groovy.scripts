@@ -20,7 +20,7 @@ def call(Map config) {
             stage ('before') {
                 steps {
                     script {
-                        config.beforeHook(this)
+                        config.beforeHook(helloHelper: helloHelper)
                     }
                 }
             }
