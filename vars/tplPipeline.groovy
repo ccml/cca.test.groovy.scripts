@@ -23,7 +23,7 @@ def call(Map config) {
                         config.beforeHook(
                             env: env,
                             steps: steps,
-                            script: script,
+                            script: this,
                             helloHelper: helloHelper,
                             helloHelperClaude: helloHelperClaude
                         )
