@@ -43,6 +43,9 @@ def call(Map config) {
                 }
             }
             stage ('after') {
+                when {
+                    config.afterHook != 'none'
+                }
                 steps {
                     script {
                         config.afterHook()
