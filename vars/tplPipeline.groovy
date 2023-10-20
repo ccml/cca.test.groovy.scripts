@@ -14,6 +14,7 @@ def call(Map config) {
             CI = 'true'
         }
         parameters {
+            string(name: 'abc', defaultValue: 'def', description: '')
             booleanParam(name: 'executeTest', defaultValue: true, description: '')
         }
         stages {
