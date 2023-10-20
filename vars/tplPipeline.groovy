@@ -1,4 +1,4 @@
-def call(Map config[:]) {
+def call(Map config) {
     def helloHelper = new net.ccmlits.core.HelloHelper()
     helloHelper.construct('Hello', '.')
 
